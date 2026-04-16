@@ -11,3 +11,9 @@ hashmap.c:78:26: error: assignment to ‘long int’ from ‘Pair *’ makes int
    78 |             map->current = map->buckets[posicion];
       |                          ^
 27dddb1
+Thu Apr 16 08:25:25 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  3|6
+total_score: 10/60
+cab00c0
