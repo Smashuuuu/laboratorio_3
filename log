@@ -1,0 +1,13 @@
+Thu Apr 16 08:24:59 PM UTC 2026: 
+ hashmap.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:67:22: error: assignment to ‘long int’ from ‘Pair *’ makes integer from pointer without a cast [-Wint-conversion]
+   67 |         map->current = map->buckets[posicion];
+      |                      ^
+hashmap.c:78:26: error: assignment to ‘long int’ from ‘Pair *’ makes integer from pointer without a cast [-Wint-conversion]
+   78 |             map->current = map->buckets[posicion];
+      |                          ^
+27dddb1
