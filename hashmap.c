@@ -71,7 +71,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     while (map->buckets[posicion] != NULL) {
         if (posicion == map->capacity) {
             long modulo = posicion+1%map->capacity;
-            posicion = modulo
+            posicion = modulo;
         }
         posicion++;
         if (map->buckets[modulo] == NULL) {
