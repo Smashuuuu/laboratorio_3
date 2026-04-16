@@ -53,3 +53,9 @@ hashmap.c:77:26: error: ‘modulo’ undeclared (first use in this function); di
       |                          modfl
 hashmap.c:77:26: note: each undeclared identifier is reported only once for each function it appears in
 db45ff9
+Thu Apr 16 08:52:45 PM UTC 2026: 
+ hashmap.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+ tests:  0|7
+total_score: 0/60
+4c86a3f
