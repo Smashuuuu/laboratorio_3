@@ -70,7 +70,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     
     while (map->buckets[posicion] != NULL) {
         if (posicion == map->capacity) {
-            long modulo = posicion+1%map->capacity;
+            long modulo = posicion%map->capacity;
             posicion = modulo;
         }
         
