@@ -23,3 +23,21 @@ Thu Apr 16 08:50:25 PM UTC 2026:
  tests:  2|7
 total_score: 0/60
 595b08b
+Thu Apr 16 08:52:07 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:74:30: error: expected ‘;’ before ‘}’ token
+   74 |             posicion = modulo
+      |                              ^
+      |                              ;
+   75 |         }
+      |         ~                     
+hashmap.c:77:26: error: ‘modulo’ undeclared (first use in this function); did you mean ‘modfl’?
+   77 |         if (map->buckets[modulo] == NULL) {
+      |                          ^~~~~~
+      |                          modfl
+hashmap.c:77:26: note: each undeclared identifier is reported only once for each function it appears in
+05a5fbb
