@@ -45,7 +45,14 @@ int is_equal(void* key1, void* key2){
 // Inicialice el índice current a -1.
 
 HashMap * createMap(long capacity) {
-
+    HashMap nuevo_mapa;
+    nuevo_mapa->capacity = capacity;
+    nuevo_mapa->size = 0;
+    for (long i = 0; i < capacity; i++)
+        {
+            nuevo_mapa->buckets[i] = NULL;
+        }
+    nuevo_mapa->current = -1;
     return NULL;
 }
 
@@ -69,13 +76,14 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     
     while (map->buckets[posicion] != NULL) {
-        long modulo = (posicion+1)%map->capacity;
+        long modulo = (posicion+1) % map->capacity;
         
         if (map->buckets[modulo] == NULL) {
             map->buckets[modulo] = nuevo_par;
             map->current = modulo;
             return;
         }
+        
         posicion++;
         if (posicion == map->capacity) {
             posicion = 0;

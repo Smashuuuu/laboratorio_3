@@ -77,3 +77,22 @@ Thu Apr 16 08:56:50 PM UTC 2026:
  tests:  3|6
 total_score: 10/60
 af81d7e
+Sun Apr 19 04:08:39 PM UTC 2026: 
+ hashmap.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:49:15: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   49 |     nuevo_mapa->capacity = capacity;
+      |               ^~
+hashmap.c:50:15: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   50 |     nuevo_mapa->size = 0;
+      |               ^~
+hashmap.c:53:23: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   53 |             nuevo_mapa->buckets[i] = NULL;
+      |                       ^~
+hashmap.c:55:15: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   55 |     nuevo_mapa->current = -1;
+      |               ^~
+20ea83a
