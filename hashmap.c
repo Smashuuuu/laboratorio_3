@@ -77,17 +77,21 @@ void insertMap(HashMap * map, char * key, void * value) {
         map->size+=1;
         return;
     }
-
-    long modulo = (posicion+1) % map->capacity;
-    while (map->buckets[modulo] != NULL) {
+    
+    while (map->buckets[posicion] != NULL) {
+        long modulo = (posicion+1) % map->capacity;
+        
         if (map->buckets[modulo] == NULL) {
             map->buckets[modulo] = nuevo_par;
             map->current = modulo;
             map->size+=1;
             return;
         }
-
-        modulo = (modulo+1) % map->capacity;
+        
+        posicion++;
+        if (posicion == map->capacity) {
+            posicion = 0;
+        }
     }
 }
 
