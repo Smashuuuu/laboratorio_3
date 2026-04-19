@@ -110,21 +110,14 @@ Pair * searchMap(HashMap * map,  char * key) {
         return map->buckets[posicion];
     }
 
-    while (map->buckets[posicion] != NULL && strcmp(map->buckets[posicion]->key, key) != 0) {
-        long modulo = (posicion+1) % map->capacity;
-        if (map->buckets[modulo] == NULL) {
-            return NULL;
-        } 
-        
+    long modulo = (posicion+1) % map->capacity;
+    while (map->buckets[modulo] != NULL && strcmp(map->buckets[modulo]->key, key) != 0) {
         if (strcmp(map->buckets[modulo]->key, key) == 0) {
             map->current = modulo;
             return map->buckets[modulo];
         }
 
-        posicion++;
-        if (posicion == map->capacity) {
-            posicion = 0;
-        }
+        modulo = (modulo+1) % map->capacity;
     }
     return NULL;
 }
