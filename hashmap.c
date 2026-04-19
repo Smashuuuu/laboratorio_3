@@ -116,6 +116,10 @@ Pair * searchMap(HashMap * map,  char * key) {
         }
         
         long modulo = (posicion+1) % map->capacity;
+        if (map->buckets[modulo] == NULL) {
+            return NULL;
+        } 
+        
         if (strcmp(map->buckets[modulo]->key, key) == 0) {
             map->current = modulo;
             return map->buckets[modulo];
