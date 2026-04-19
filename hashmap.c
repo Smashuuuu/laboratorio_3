@@ -122,7 +122,25 @@ Pair * searchMap(HashMap * map,  char * key) {
 // Recuerde actualizar la variable size.
 
 void eraseMap(HashMap * map,  char * key) {    
+    long posicion = hash(key, map->capacity);
 
+    if (map->buckets[posicion] != NULL && strcmp(map->buckets[posicion]->key, key) == 0) {
+        map->buckets[posicion]->key = NULL;
+        map->size-=1;
+        return;
+    }
+
+    long modulo = (posicion+1) % map->capacity;
+    while (map->buckets[modulo] != NULL) {
+        if (strcmp(map->buckets[modulo]->key, key) == 0) {
+            map->buckets[posicion]->key = NULL;
+            map->size-=1;
+            return;
+        }
+
+        modulo = (modulo+1) % map->capacity;
+    }
+    return;
 
 }
 
@@ -157,8 +175,3 @@ void enlarge(HashMap * map) {
 
 
 }
-
-
-
-
-
