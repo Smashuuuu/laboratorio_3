@@ -105,7 +105,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 Pair * searchMap(HashMap * map,  char * key) {   
     long posicion = hash(key, map->capacity);
 
-    if (strcmp(map->buckets[posicion]->key, key) == 0) {
+    if (map->buckets[posicion] != NULL && strcmp(map->buckets[posicion]->key, key) == 0) {
         map->current = posicion;
         return map->buckets[posicion];
     }
