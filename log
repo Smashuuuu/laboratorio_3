@@ -174,3 +174,8 @@ hashmap.c:105:8: note: declared here
   105 | Pair * searchMap(HashMap * map,  char * key) {
       |        ^~~~~~~~~
 54738ad
+Sun Apr 19 04:36:10 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+f0469fe
