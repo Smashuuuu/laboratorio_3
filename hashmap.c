@@ -74,6 +74,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     if (map->buckets[posicion] == NULL) {
         map->buckets[posicion] = nuevo_par;
         map->current = posicion;
+        map->size+=1;
         return;
     }
     
@@ -83,6 +84,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         if (map->buckets[modulo] == NULL) {
             map->buckets[modulo] = nuevo_par;
             map->current = modulo;
+            map->size+=1;
             return;
         }
         
