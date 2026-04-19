@@ -69,7 +69,6 @@ HashMap * createMap(long capacity) {
 
 void insertMap(HashMap * map, char * key, void * value) {
     long posicion = hash(key, map->capacity);
-    long modulo = (posicion+1) % map->capacity;
     Pair* nuevo_par = createPair(key, value);
 
     if (map->buckets[posicion] == NULL) {
@@ -78,7 +77,8 @@ void insertMap(HashMap * map, char * key, void * value) {
         map->size+=1;
         return;
     }
-    
+
+    long modulo = (posicion+1) % map->capacity;
     while (map->buckets[modulo] != NULL) {
         if (map->buckets[modulo] == NULL) {
             map->buckets[modulo] = nuevo_par;
