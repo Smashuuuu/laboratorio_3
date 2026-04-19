@@ -145,3 +145,14 @@ Sun Apr 19 04:32:04 PM UTC 2026:
  1 file changed, 18 insertions(+)
  tests:  0|0
 55ce99c
+Sun Apr 19 04:34:07 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:113:53: error: suggest parentheses around comparison in operand of ‘&’ [-Werror=parentheses]
+  113 |     while (strcmp(map->buckets[posicion]->key, key) != 0 & map->buckets[posicion] != NULL) {
+      |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+cc1: all warnings being treated as errors
+9f6ad6c
