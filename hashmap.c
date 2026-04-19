@@ -149,11 +149,9 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
     long posicion = 0;
-    while (posicion <= map->capacity) {
+    while (posicion < map->capacity) {
         if (map->buckets[posicion] != NULL) {
-            if (map->buckets[posicion]->key != NULL) {
-                return map->buckets[posicion];
-            }
+            return map->buckets[posicion];
         }
         posicion++;
     }
