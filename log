@@ -96,3 +96,17 @@ hashmap.c:55:15: error: invalid type argument of ‘->’ (have ‘HashMap’ {a
    55 |     nuevo_mapa->current = -1;
       |               ^~
 20ea83a
+Sun Apr 19 04:10:12 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:49:26: error: ‘nuevo_mapa’ is used uninitialized [-Werror=uninitialized]
+   49 |     nuevo_mapa->capacity = capacity;
+      |     ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+hashmap.c:48:14: note: ‘nuevo_mapa’ was declared here
+   48 |     HashMap *nuevo_mapa;
+      |              ^~~~~~~~~~
+cc1: all warnings being treated as errors
+65de545
