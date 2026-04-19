@@ -133,7 +133,7 @@ void eraseMap(HashMap * map,  char * key) {
     long modulo = (posicion+1) % map->capacity;
     while (map->buckets[modulo] != NULL) {
         if (strcmp(map->buckets[modulo]->key, key) == 0) {
-            map->buckets[posicion]->key = NULL;
+            map->buckets[modulo]->key = NULL;
             map->size-=1;
             return;
         }
