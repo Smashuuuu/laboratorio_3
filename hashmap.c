@@ -141,7 +141,6 @@ void eraseMap(HashMap * map,  char * key) {
         modulo = (modulo+1) % map->capacity;
     }
     return;
-
 }
 
 // 5. Implemente las funciones para recorrer la estructura: Pair * firstMap(HashMap * map) retorna el primer Pair válido del arreglo buckets. 
@@ -149,6 +148,13 @@ void eraseMap(HashMap * map,  char * key) {
 // Recuerde actualizar el índice.
 
 Pair * firstMap(HashMap * map) {
+    long posicion = 0;
+    while (map->buckets[posicion] <= map->capacity) {
+        if (map->buckets[posicion]->key != NULL) {
+            return map->buckets[posicion];
+        }
+        posicion++;
+    }
 
     return NULL;
 }

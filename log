@@ -251,3 +251,14 @@ Sun Apr 19 05:11:23 PM UTC 2026:
  tests:  11|2
 total_score: 40/60
 829d075
+Sun Apr 19 11:03:54 PM UTC 2026: 
+ hashmap.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:152:35: error: comparison between pointer and integer [-Werror]
+  152 |     while (map->buckets[posicion] <= map->capacity) {
+      |                                   ^~
+cc1: all warnings being treated as errors
+525f2a8
