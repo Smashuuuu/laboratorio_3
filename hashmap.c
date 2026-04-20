@@ -190,5 +190,20 @@ Pair * nextMap(HashMap * map) {
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
 
+    Pair ** old_buckets = map->buckets;
+    long old_capacity = map->capacity;
+    map->capacity *= 2;
+    Pair ** new_buckets = (Pair**)calloc(map->capacity, sizeof(Pair*));
+    map->buckets = new_buckets;
+    map->size = 0;
 
+    long posicion = 0;
+    while (posicion < old_capacity) {
+        if (old_buckets[posicion] != NULL) {
+            if (old_buckets[posicion]->key != NULL) {
+                insert(map, old_buckets[posicion]->key, old_buckets[posicion]->value);
+            }
+        }
+        posicion++;
+    }
 }
