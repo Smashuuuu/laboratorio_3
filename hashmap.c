@@ -201,7 +201,7 @@ void enlarge(HashMap * map) {
     while (posicion < old_capacity) {
         if (old_buckets[posicion] != NULL) {
             if (old_buckets[posicion]->key != NULL) {
-                insert(map, old_buckets[posicion]->key, old_buckets[posicion]->value);
+                insertMap(map, old_buckets[posicion]->key, old_buckets[posicion]->value);
             }
         }
         posicion++;
