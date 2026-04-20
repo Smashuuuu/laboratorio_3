@@ -109,7 +109,7 @@ Pair * searchMap(HashMap * map,  char * key) {
             map->current = modulo;
             return map->buckets[modulo];
         }
-
+        
         modulo = (modulo+1) % map->capacity;
     }
     return NULL;
@@ -151,8 +151,10 @@ Pair * firstMap(HashMap * map) {
     long posicion = 0;
     while (posicion < map->capacity) {
         if (map->buckets[posicion] != NULL) {
-            map->current = posicion;
-            return map->buckets[posicion];
+            if (map->buckets[posicion]->key != NULL) {
+                map->current = posicion;
+                return map->buckets[posicion];
+            }
         }
         posicion++;
     }
@@ -160,7 +162,16 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-
+    long posicion = map->current+1;
+    while (posicion < map->capacity) {
+        if (map->buckets[posicion] != NULL) {
+            if (map->buckets[posicion]->key != NULL) {
+                map->current = posicion;
+                return map->buckets[posicion];
+            }
+        }
+        posicion++;
+    }
     return NULL;
 }
 
